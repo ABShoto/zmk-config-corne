@@ -53,14 +53,15 @@
         };
 
         copy {
-            bindings = <&kp K_COPY>;
+            bindings = <&mt LCTRL C>;  // Ctrl+C
             key-positions = <27 26>;
         };
-
+        
         paste {
-            bindings = <&kp K_PASTE>;
+            bindings = <&mt LCTRL V>;  // Ctrl+V
             key-positions = <27 28>;
         };
+
 
         escape {
             bindings = <&kp ESC>;
