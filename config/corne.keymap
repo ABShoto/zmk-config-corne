@@ -105,12 +105,13 @@
 
         nav {
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp PAGE_UP    &kp HOME      &kp UP      &kp END        &none  &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PAGE_DOWN  &kp LEFT      &kp DOWN    &kp RIGHT      &none  &trans
-&trans  &none     &none     &none      &none      &none     &kp LG(LEFT)   &kp LG(DOWN)  &kp LG(UP)  &kp LG(RIGHT)  &none  &trans
-                            &trans     &trans     &trans    &trans         &trans        &trans
+&trans  &none     &none     &none      &none      &none     &mk WH_UP    &mk UP       &mk WH_DOWN   &none        &none    &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &mk LEFT     &mk BTN1     &mk RIGHT     &none        &none    &trans
+&trans  &none     &none     &none      &none      &none     &mk BTN2     &mk DOWN     &mk BTN3      &none        &none    &trans
+                                    &trans     &trans     &trans    &trans       &trans       &trans
             >;
         };
+
 
         settings {
             bindings = <
