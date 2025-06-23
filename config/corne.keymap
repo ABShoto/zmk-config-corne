@@ -48,7 +48,7 @@
 
         settings_layer {
             timeout-ms = <50>;
-            key-positions = <1 0>;
+            key-positions = <0 12>;
             bindings = <&mo SETTINGS>;
         };
 
@@ -64,7 +64,7 @@
 
         escape {
             bindings = <&kp ESC>;
-            key-positions = <2 1>;
+            key-positions = <2 3>;
         };
 
         enter {
