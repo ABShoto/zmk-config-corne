@@ -53,7 +53,7 @@
         settings_layer {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&mo SETTINGS>;
+            bindings = <&mo 4>;
         };
 
         copy {
@@ -66,14 +66,9 @@
             key-positions = <27 28>;
         };
 
-        grave {
-            bindings = <&kp GRAVE>;
-            key-positions = <2 3>;
-        };
-
         enter {
             bindings = <&kp ENTER>;
-            key-positions = <3 4>;
+            key-positions = <29 28>;
         };
 
         undo {
@@ -83,22 +78,27 @@
 
         redo {
             bindings = <&kp LC(LS(Z))>;
-            key-positions = <25 27 26>;
+            key-positions = <25 26 27>;
         };
 
-        save {
-            bindings = <&kp LC(S)>;
-            key-positions = <12 13>;
+        Del {
+            bindings = <&kp DELETE>;
+            key-positions = <10 11>;
         };
 
-        cut {
-            bindings = <&kp LC(X)>;
-            key-positions = <29 28>;
+        typing {
+            bindings = <&tog 5>;
+            key-positions = <36 41>;
         };
 
-        mark {
-            bindings = <&kp ASTERISK>;
-            key-positions = <4 5>;
+        close {
+            bindings = <&kp LA(F4)>;
+            key-positions = <4 3>;
+        };
+
+        tab {
+            bindings = <&kp LS(TAB)>;
+            key-positions = <2 3>;
         };
     };
 
@@ -116,37 +116,37 @@
 
         default_layer {
             bindings = <
-&gresc        &kp Q             &kp W         &kp F          &kp P          &kp B        &kp J      &kp L           &kp U          &kp Y         &kp SEMI       &kp BSPC
+&kp ESCAPE    &kp Q             &kp W         &kp F          &kp P          &kp B        &kp J      &kp L           &kp U          &kp Y         &kp SEMI       &kp BSPC
 &lt 3 TAB     &bhml LEFT_GUI A  &bhml LALT R  &bhml LCTRL S  &bhml LSHFT T  &kp G        &kp M      &bhmr LSHFT N   &bhmr RCTRL E  &bhmr LALT I  &bhmr RMETA O  &kp SQT
-&kp LEFT_GUI  &kp Z             &kp X         &kp C          &kp D          &kp V        &kp K      &kp H           &kp COMMA      &kp DOT       &kp FSLH       &kp ASTERISK
-                                              &mo 1          &mo 2          &kp SPACE    &kp ENTER  &kp LEFT_SHIFT  &mo 3
+&kp LEFT_GUI  &kp Z             &kp X         &kp C          &kp D          &kp V        &kp K      &kp H           &kp COMMA      &kp DOT       &kp FSLH       &kp ENTER
+                                              &mo 2          &mo 1          &kp SPACE    &kp ENTER  &kp LEFT_SHIFT  &mo 3
             >;
         };
 
         number {
             bindings = <
-&email  &kp F1    &kp AT_SIGN  &kp HASH   &kp F9     &none     &trans  &kp N7  &kp N8  &kp N9  &kp MINUS  &trans
-&trans  &kp LGUI  &kp LALT     &kp LCTRL  &kp LSHFT  &none     &trans  &kp N4  &kp N5  &kp N6  &kp PLUS   &trans
-&trans  &none     &none        &none      &none      &none     &trans  &kp N1  &kp N2  &kp N3  &kp EQUAL  &trans
-                               &trans     &trans     &trans    &trans  &trans  &kp N0
-            >;
-        };
-
-        symbol {
-            bindings = <
-&trans  &trans    &trans    &trans     &trans     &kp C_VOL_UP    &kp HOME  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp INS          &kp DEL
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &kp C_VOL_DN    &kp END   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&trans  &none     &none     &none      &none      &kp C_MUTE      &trans    &trans          &trans          &trans        &kp C_AC_DEL     &trans
-                            &trans     &trans     &trans          &trans    &trans          &trans
+&kp GRAVE    &kp LC(Q)         &kp LC(W)         &kp LC(F)          &kp F9             &kp LC(B)    &kp PLUS   &kp N7  &kp N8      &kp N9  &kp ASTERISK  &trans
+&kp LA(TAB)  &bhml LGUI LC(A)  &bhml LALT LC(R)  &bhml LCTRL LC(S)  &bhml LSHFT LC(T)  &kp LC(G)    &kp N0     &kp N4  &kp N5      &kp N6  &kp EQUAL     &trans
+&trans       &kp LC(Z)         &kp LC(X)         &kp LC(C)          &kp LC(D)          &kp LC(V)    &kp MINUS  &kp N1  &kp N2      &kp N3  &kp SLASH     &trans
+                                                 &trans             &trans             &trans       &trans     &trans  &kp PERIOD
             >;
         };
 
         nav {
             bindings = <
-&trans  &kp F12  &kp F7  &kp F8  &kp F9  &trans    &none     &mkp MB1        &msc SCRL_UP    &mkp MB2         &mkp MB3         &trans
-&trans  &kp F11  &kp F4  &kp F5  &kp F6  &trans    &none     &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP     &mmv MOVE_RIGHT  &trans
-&trans  &kp F10  &kp F1  &kp F2  &kp F3  &trans    &none     &mmv MOVE_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none            &trans
-                         &trans  &trans  &trans    &mkp MB1  &mkp MB2        &trans
+&trans  &none     &none     &none      &none      &none     &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans           &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp PRINTSCREEN  &trans
+&trans  &none     &none     &none      &none      &none     &trans         &trans          &trans          &trans     &trans           &trans
+                            &trans     &trans     &trans    &trans         &trans          &trans
+            >;
+        };
+
+        mouse {
+            bindings = <
+&trans  &none  &none           &msc SCRL_UP    &none            &none     &msc SCRL_UP    &mkp MB1        &mmv MOVE_UP    &mkp MB2         &none     &trans
+&trans  &none  &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_RIGHT  &none     &msc SCRL_DOWN  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &mkp MB3  &trans
+&trans  &none  &none           &none           &none            &none     &none           &none           &none           &none            &none     &trans
+                               &trans          &trans           &trans    &mkp MB1        &mkp MB2        &trans
             >;
         };
 
@@ -156,6 +156,15 @@
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp F11  &kp F4  &kp F5  &kp F6  &kp C_VOL_DN  &none
 &none       &none         &none         &none         &out OUT_BLE  &out OUT_USB    &kp F10  &kp F1  &kp F2  &kp F3  &kp C_MUTE    &none
                                         &kp C_PREV    &kp C_PP      &kp C_NEXT      &none    &none   &none
+            >;
+        };
+
+        typing {
+            bindings = <
+&trans  &kp Q  &kp W  &kp F   &kp P   &kp B        &kp J      &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
+&trans  &kp A  &kp R  &kp S   &kp T   &kp G        &kp M      &kp N      &kp E      &kp I    &kp O     &trans
+&trans  &kp Z  &kp X  &kp C   &kp D   &kp V        &kp K      &kp H      &kp COMMA  &kp DOT  &kp FSLH  &trans
+                      &trans  &trans  &kp SPACE    &kp ENTER  &kp LSHFT  &trans
             >;
         };
     };
