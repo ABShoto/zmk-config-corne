@@ -53,7 +53,7 @@
         settings_layer {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&lt 4 LC(LS(ESC))>;
+            bindings = <&mo 4>;
         };
 
         copy {
