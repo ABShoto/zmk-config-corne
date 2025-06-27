@@ -53,7 +53,7 @@
         settings_layer {
             timeout-ms = <50>;
             key-positions = <0 1>;
-            bindings = <&mo 4>;
+            bindings = <&lt 4 LC(LS(ESC))>;
         };
 
         copy {
@@ -93,12 +93,17 @@
 
         close {
             bindings = <&kp LA(F4)>;
-            key-positions = <4 3>;
+            key-positions = <4 2>;
         };
 
         closew {
             bindings = <&kp LC(W)>;
-            key-positions = <2 3>;
+            key-positions = <3 4>;
+        };
+
+        taskmanager {
+            bindings = <&kp LC(LS(ESCAPE))>;
+            key-positions = <0 12>;
         };
     };
 
@@ -108,6 +113,20 @@
             #binding-cells = <0>;
             bindings = <&kp A &kp B &kp H &kp A &kp Y &kp N5 &kp N2 &kp N4 &kp N3 &kp N1 &kp AT &kp G &kp M &kp A &kp I &kp L &kp DOT &kp C &kp O &kp M>;
             label = "EMAIL";
+        };
+
+        layer5: layer_5_is_on {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp N5 &kp T &kp H &kp DOT>;
+            label = "LAYER_5_IS_ON";
+        };
+
+        anime_name: anime_name {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(A) &kp N &kp I &kp M &kp E &kp COLON &kp SPACE &kp RET &kp LS(S) &kp O &kp N &kp G &kp COLON &kp SPACE>;
+            label = "ANIME_NAME";
         };
     };
 
@@ -119,7 +138,7 @@
 &kp ESCAPE    &kp Q             &kp W         &kp F          &kp P          &kp B        &kp J      &kp L           &kp U          &kp Y         &kp SEMI       &kp BSPC
 &lt 3 TAB     &bhml LEFT_GUI A  &bhml LALT R  &bhml LCTRL S  &bhml LSHFT T  &kp G        &kp M      &bhmr LSHFT N   &bhmr RCTRL E  &bhmr LALT I  &bhmr RMETA O  &kp SQT
 &kp LEFT_GUI  &kp Z             &kp X         &kp C          &kp D          &kp V        &kp K      &kp H           &kp COMMA      &kp DOT       &kp FSLH       &kp ENTER
-                                              &mo 2          &mo 1          &kp SPACE    &kp ENTER  &kp LEFT_SHIFT  &mo 3
+                                              &mo 2          &lt 1 TAB      &kp SPACE    &kp ENTER  &kp LEFT_SHIFT  &mo 3
             >;
         };
 
@@ -134,10 +153,10 @@
 
         nav {
             bindings = <
-&trans  &none     &none     &none      &none      &none     &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &trans           &trans
-&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT  &none     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp PRINTSCREEN  &trans
-&trans  &none     &none     &none      &none      &none     &trans         &trans          &trans          &trans     &trans           &trans
-                            &trans     &trans     &trans    &trans         &trans          &trans
+&trans  &none     &email    &none      &anime_name  &none     &kp PAGE_UP    &kp HOME        &kp UP_ARROW    &kp END    &kp ASTERISK     &trans
+&trans  &kp LGUI  &kp LALT  &kp LCTRL  &kp LSHFT    &none     &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT  &kp PRINTSCREEN  &trans
+&trans  &none     &none     &none      &none        &none     &none          &none           &none           &none      &none            &trans
+                            &trans     &trans       &trans    &trans         &trans          &trans
             >;
         };
 
@@ -161,10 +180,10 @@
 
         typing {
             bindings = <
-&trans  &kp Q  &kp W  &kp F   &kp P  &kp B        &kp J      &kp L      &kp U      &kp Y    &kp SEMI  &kp BSPC
-&trans  &kp A  &kp R  &kp S   &kp T  &kp G        &kp M      &kp N      &kp E      &kp I    &kp O     &kp C
-&trans  &kp Z  &kp X  &kp C   &kp D  &kp V        &kp K      &kp H      &kp COMMA  &kp DOT  &kp FSLH  &trans
-                      &trans  &mo 1  &kp SPACE    &kp ENTER  &kp LSHFT  &trans
+&kp ESCAPE        &kp Q  &kp W  &kp F         &kp P      &kp B        &kp J      &kp L      &kp U      &kp Y    &kp SEMI  &kp LC(BSPC)
+&kp LEFT_CONTROL  &kp A  &kp R  &kp S         &kp T      &kp G        &kp M      &kp N      &kp E      &kp I    &kp O     &layer5
+&kp LEFT_ALT      &kp Z  &kp X  &kp C         &kp D      &kp V        &kp K      &kp H      &kp COMMA  &kp DOT  &kp FSLH  &kp ENTER
+                                &kp LEFT_GUI  &lt 1 TAB  &kp SPACE    &kp ENTER  &kp LSHFT  &mo 3
             >;
         };
     };
