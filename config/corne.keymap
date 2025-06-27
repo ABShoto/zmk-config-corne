@@ -105,6 +105,16 @@
             bindings = <&kp LC(LS(ESCAPE))>;
             key-positions = <0 12>;
         };
+
+        del2 {
+            bindings = <&kp DEL>;
+            key-positions = <3 5>;
+        };
+
+        cut {
+            bindings = <&kp LC(X)>;
+            key-positions = <26 28>;
+        };
     };
 
     macros {
